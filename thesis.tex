@@ -42,6 +42,8 @@
 \input{sidematter/acknowledgments}
 
 \pagestyle{scrheadings}
+% \clearscrheadfoot
+% \ohead{\leftmark}
 
 \input{sidematter/contents}
 \cleardoublepage
@@ -54,10 +56,19 @@
 
 \input{chapters/introduction}
 \cleardoublepage
+
+\pagestyle{plain}
 \input{chapters/publications}
+\cleardoublepage
+
+\pagestyle{scrheadings}
+\input{chapters/discussion}
 
 %******************************************************************
 % Backmatter
 %******************************************************************
+
+\clearpage
+% \input{chapters/bibliography}
 
 \end{document}
