@@ -1,5 +1,5 @@
 \documentclass[a4paper,twoside,openright,titlepage,
-               headinclude,,footinclude,BCOR5mm,
+               headinclude,,footinclude,BCOR=5mm,
                numbers=noenddot,cleardoublepage=empty,
                tablecaptionabove]{scrreprt}
 
@@ -33,7 +33,7 @@
 
 \input{sidematter/titlepage}
 \input{sidematter/titleback}
-\cleardoublepage
+% \cleardoublepage
 
 \input{sidematter/supervisor}
 \input{sidematter/summary}
@@ -42,10 +42,15 @@
 \pagestyle{scrheadings}
 
 \input{sidematter/contents}
+% \cleardoublepage
 
 % %******************************************************************
 % % Chapters
 % %******************************************************************
+
+\pagenumbering{arabic}
+
+\input{chapters/introduction}
 
 %******************************************************************
 % Backmatter
