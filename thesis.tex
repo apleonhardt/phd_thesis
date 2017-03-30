@@ -1,47 +1,54 @@
-\documentclass[10pt,a4paper,twoside,openright,titlepage,fleqn,%
-               headinclude,,footinclude,BCOR=5mm,%
-               numbers=noenddot,cleardoublepage=empty,%
+\documentclass[a4paper,twoside,openright,titlepage,
+               headinclude,,footinclude,BCOR5mm,
+               numbers=noenddot,cleardoublepage=empty,
                tablecaptionabove]{scrreprt}
-               
-\usepackage[italian,american]{babel}
-%\usepackage[applemac]{inputenc}
-\usepackage[utf8]{inputenc}
+
 \usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{varioref}
-\usepackage[style=philosophy-modern,hyperref,square,natbib]{biblatex}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{indentfirst}
+\usepackage[style=philosophy-modern,hyperref]{biblatex}
 \usepackage{chngpage}
 \usepackage{calc}
 \usepackage{listings}
 \usepackage{graphicx}
-\usepackage{transparent}
-\usepackage[absolute]{textpos}
-\usepackage{afterpage}
 \usepackage{subfig}
-\usepackage{multicol}
-\usepackage{makeidx}
-\usepackage{relsize}
 \usepackage{lipsum}
+\usepackage{shapepar}
+\usepackage{pifont}
 \usepackage[eulerchapternumbers,subfig,beramono,eulermath,pdfspacing,listings]{classicthesis}
 \usepackage{arsclassica}
-  
-\newcommand\blankpage{%
-    \null
-    \thispagestyle{empty}%
-    \addtocounter{page}{-1}%
-    \newpage}
-  
+
 \input{thesis-settings}
 
 \begin{document}
-
-\pagenumbering{roman}
-\pagestyle{plain}
 
 %******************************************************************
 % Frontmatter
 %******************************************************************
 
-\input{sidematter/titlepage2}
+\pagestyle{plain}
+\pagenumbering{roman}
+
+\input{sidematter/titlepage}
+\input{sidematter/titleback}
+\cleardoublepage
+
+\input{sidematter/supervisor}
+\input{sidematter/summary}
+\input{sidematter/acknowledgments}
+
+\pagestyle{scrheadings}
+
+\input{sidematter/contents}
+
+% %******************************************************************
+% % Chapters
+% %******************************************************************
+
+%******************************************************************
+% Backmatter
+%******************************************************************
 
 \end{document}

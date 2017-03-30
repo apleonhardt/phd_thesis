@@ -1,33 +1,37 @@
+%*******************************************************
+% Titlepage
+%*******************************************************
+
 \begin{titlepage}
 \pdfbookmark{Titlepage}{Titlepage}
 
-\begin{addmargin}[-1cm]{-3.5cm}
-\begin{center}
+\changetext{}{}{}{((\paperwidth  - \textwidth) / 2) - \oddsidemargin - \hoffset - 1in}{}
 
-\mySubTitle
+    \begin{center}
+        {\LARGE  
 
-\begin{textblock*}{70mm}(72mm,45mm)
-\centering
-\vspace{10pt}
-\includegraphics[width=\textwidth]{graphics/gsnlogo.pdf}
-\end{textblock*}
+        \hfill
 
-\vspace{6.0cm}
+        \vfill
 
-\textbf{\LARGE \myTitle }\\
-\vspace{2cm}
-Submitted by\\
-\vspace{0.5cm}
-\textbf{\large \scshape \myName}\\
-\vspace{0.2cm}
-\textbf{\large \scshape \myTime}\\
-\end{center}
+        {\spacedlowsmallcaps{\myName}} \\ \bigskip
 
-\begin{textblock*}{180mm}(80mm,140mm)
-\centering
-{\transparent{0.3}\includegraphics[width=\textwidth]{graphics/siegel_lmu.pdf}}
-\end{textblock*}
+        {\color{Maroon}\spacedallcaps{\myTitle}} 
 
-\end{addmargin}    
-\end{titlepage}
-\afterpage{\blankpage}
+        }
+
+        \vfill
+
+        \includegraphics[width=0.4\textwidth]{graphics/siegel_lmu} \\ \bigskip
+
+		\mySubTitle
+
+        \vfill
+        
+        \myTime
+        
+        \vfill
+
+    \end{center}   
+
+\end{titlepage} 
