@@ -20,6 +20,8 @@
 \usepackage[eulerchapternumbers,subfig,beramono,eulermath,pdfspacing,listings]{classicthesis}
 \usepackage{arsclassica}
 
+\usepackage{pdfpages}
+
 \input{thesis-settings}
 
 \begin{document}
@@ -33,7 +35,7 @@
 
 \input{sidematter/titlepage}
 \input{sidematter/titleback}
-% \cleardoublepage
+\cleardoublepage
 
 \input{sidematter/supervisor}
 \input{sidematter/summary}
@@ -42,7 +44,7 @@
 \pagestyle{scrheadings}
 
 \input{sidematter/contents}
-% \cleardoublepage
+\cleardoublepage
 
 % %******************************************************************
 % % Chapters
@@ -51,6 +53,8 @@
 \pagenumbering{arabic}
 
 \input{chapters/introduction}
+\cleardoublepage
+\input{chapters/publications}
 
 %******************************************************************
 % Backmatter
