@@ -71,21 +71,3 @@
 \lstnewenvironment{code}% 
    {\setkeys{lst}{columns=fullflexible,keepspaces=true}%
    \lstset{basicstyle=\small\ttfamily}}{}
-
-
-% ********************************************************************
-% Bibliography
-% ******************************************************************** 
-\bibliography{Bibliography}
-
-\defbibheading{bibliography}{%
-\cleardoublepage
-\manualmark
-\phantomsection
-\addcontentsline{toc}{chapter}{\tocEntry{\bibname}}
-\chapter*{\bibname\markboth{\spacedlowsmallcaps{\bibname}}
-{\spacedlowsmallcaps{\bibname}}}}
-
-\renewcommand*{\nameyeardelim}{\addcomma\space}
-
-

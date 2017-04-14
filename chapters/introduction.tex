@@ -3,8 +3,56 @@
 \label{chp:introduction}
 %************************************************
 
-\section{Introduction}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\section{Natural scenes}
+
+A core tenet of evolutionary theory is the idea that animals are in some sense adapted to their particular niche. This notion naturally extends to brains and specifically sensory systems. Ecological environments are not arbitrary; they exhibit statistical structure. The laws of physics, for instance, impose a level of regularity onto the set of possible sensory stimuli. Some such stimuli are more probable while others are outright incompatible with the rules that govern any given organism's surroundings. It is a reasonable supposition that nervous systems strive to determine the veridical state of the world based on noisy sensory data. \textit{A priori} assumptions about the way the world \textit{tends} to be should then make this process more efficient and reliable. Such an approach to sensory systems has a rich history, going back to Helmholtz who framed perception as the problem of unconscious inference.
+
+A central theme of my dissertation is the question to what extent visual statistics are reflected in the properties of neural circuitry, using fly motion vision as a model system.
+
+\subsection{Statistics of natural images} Whether captured by eye or camera, natural images exhibit clear regularities that distinguish them from uniformly distributed noise.
+
+\subsection{Efficient coding} Animals evolve under manifold constraints. One of them is the need to detect stimuli that are survival-critical. Another is the need to perform this task using a minimum of metabolic energy. The highly influential \textit{efficient coding hypothesis}, going back to Attneave, Barlow, and others, formalizes this approach to understanding biological sensors. In general, the goal of any such system is to represent as much relevant information as possible using the smallest feasible amount of resources. Selecting appropriate objective functions is, of course, fraught with difficulty. Ground truth constraints are generally not available and sensory organs often support a broad range of behavioral functions, each of which may necessitate a different definition of relevancy. Nonetheless, the theory has successfully predicted features of real systems by assuming basic, tractable goals. In the sensory periphery, this usually takes the form of information preservation, thereby maximizing the number of possible downstream use cases.
+
+The main target of early vision then becomes reduction of redundancy. Ideally, signals carried by peripheral sensory neurons should be statistically independent in order to minimize wasteful duplication of information. Natural images exhibit regular statistics such as characteristically shaped power spectra that give rise to specific correlation structures. By removing such correlations and emphasizing deviations from expected natural statistics, an operation commonly termed whitening, early vision minimizes energy expenditure while conserving behaviorally relevant features of the stimulus.
+
+The fly retina provides classic demonstrations of this principle at work. \citet{Laughlin:1981wn} measured naturally occurring luminance distributions and compared the resulting histograms to corresponding response functions of lamina bipolar cells. In line with predictions from efficient coding, these response functions effectively equalized the histograms, making all outputs equally likely under the assumption of a natural stimulus distribution. A related study \citep{Srinivasan:1982uq} could show that lateral inhibition in the fly retina reliably removes the long-range correlations typical for natural images, effectively suppressing background, retaining sensitivity to small fluctuations, and implementing a type of predictive coding.
+
+\subsection{Other objective functions}
+
+% Basic statistical properties
+% Natural images are non-uniform 
+% Luminance statistics
+% FFT
+% 1/f power spectra (Field, 1987)
+% Correlations
+% Barlow's efficient coding hypothesis
+% Optimization work (ICA, Ohlshausen)
+% Laughlin
+% Dependency on ecology (van Hateren work, Dickinson ecology thing)
+% Fitzgerald and stuff
+% Figure: three images (Gaussian noise, 1/f noise, natural image)
+
+% \section{ON and OFF pathways in sensory processing}
+
+% \section{Motion vision in the fly}
+
+% \subsection{Motion-guided behaviors}
+% \subsection{Algorithmic models}
+
+% \section{Structure and function of the fly visual system}
+% \subsection{Retina}
+% \subsection{Lamina}
+% \subsection{Medulla and lobula}
+% \subsection{Lobula plate}
+% \subsection{Downstream circuits}
+
+% \section{Experimental tools in circuit neuroscience}
+% \subsection{Neurogenetics}
+% \subsection{Behavioral assays}
+% \subsection{Electrophysiology}
+% \subsection{Imaging techniques}
+% \subsection{Connectivity analysis}
+
+% \section{Concluding remarks}
