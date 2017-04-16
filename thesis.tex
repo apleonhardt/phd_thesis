@@ -1,12 +1,14 @@
-\documentclass[a4paper,twoside,openright,titlepage,
+\documentclass[a4paper,10pt,twoside,openright,titlepage,
                headinclude,,footinclude,BCOR=5mm,
                numbers=noenddot,cleardoublepage=empty,
-               tablecaptionabove]{scrreprt}
+               tablecaptionabove,
+               bibliography=totoc]{scrreprt}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amsmath,amssymb}
+\usepackage{gensymb}
 % \usepackage{indentfirst}
 % \usepackage[style=philosophy-modern,hyperref]{biblatex}
 \usepackage{natbib}
@@ -24,6 +26,10 @@
 \usepackage{pdfpages}
 
 \input{thesis-settings}
+
+\hypersetup{
+    citecolor=Maroon
+}
 
 \begin{document}
 
