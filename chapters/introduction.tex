@@ -4,6 +4,9 @@
 %************************************************
 
 % Here, cite Dickinson (2014)
+% Talk about D. melanogaster in general
+
+% Explain optic flow somewhere
 
 \section{Normative views of sensory neuroscience}
 
@@ -42,9 +45,11 @@ In addition to the most salient subset of features outlined above, researchers h
 To relate any visual system to naturally occurring stimuli, a reasonable approximation of the neuro-ecologically relevant image distribution is required. Available natural scene libraries are biased toward human visual surrounds when it comes to choice of environment, perspective, focal length, resolution, and other parameters \citep{Tkacik:2011aa}. Many of these qualities are at odds with the experience of a typical fruit fly. For instance, the \textit{Drosophila} eye processes scenes at the comparatively low resolution of approximately $25 \times 25$ facets or "pixels", covering almost $180\degree$ of azimuth at a separation of $\approx5\degree$ \citep{Borst:2009gv}. The spatial acuity of the fly eye is thus orders of magnitude below that of its human counterpart. Moreover, not much is known about the ground-truth visual statistics of the environment in which \textit{Drosophila} initially evolved \citep{Dickinson:2014aa}.
 
 %Not a problem because scale invariance.
-Spatial differences between typical inputs, however, are attenuated by the aforementioned invariance of realistic image amplitude spectra. Generally, drosophilids are extremely widespread and resilient organisms. Their brains possess comparatively few neurons, resulting in limited degrees of freedom. As a consequence, visual adaptation is unlikely to be deeply environment-specific \citep{Dickinson:2014aa}. Finally, many of the lower-order statistics discussed above appear to be due to fundamental properties of the world and therefore generalize to visual environments across the board \citep{Geisler:2008gu,Simoncelli:2001dn}. \citet{vanHateren:1997vg}, for instance, gathered natural visual time series data simply by walking through forests while recording the output of a simple LED attached at eye level.
+Spatial differences between typical inputs, however, are attenuated by the aforementioned invariance of realistic image amplitude spectra. Generally, drosophilids are extremely widespread and resilient organisms. Their brains possess comparatively few neurons, resulting in limited degrees of freedom. As a consequence, visual adaptation is unlikely to be deeply environment-specific \citep{Dickinson:2014aa}. Finally, many of the lower-order statistics discussed above appear to be due to fundamental properties of the world and therefore generalize to visual environments across the board \citep{Geisler:2008gu,Simoncelli:2001dn}. \citet{vanHateren:1997vg}, for instance, studied fly retinal processing but gathered natural visual time series data simply by walking through a forest while recording the output of a LED attached at human eye level.
 
 \subsection{Information theory}
+
+% CHECK WHAT YOU CAN CITE FROM THE 2000s
 
 Information theory, a branch of probability theory initially developed in the context of engineered communication channels \citep{Cover:2006aa,Shannon:1948aa}, provides a powerful technique for studying neural and particularly sensory processing \citep{Borst:1999hw}.
 
@@ -54,9 +59,15 @@ Formally, this is achieved by determining the entropy of a conditional probabili
 \begin{equation}
     I(R, s_x) = \sum_{i} p(r_i | s_x) \log_2 \frac{p(r_i | s_x)}{p(r_i)}
 \end{equation}
-where $i$ indexes the set of all enumerated responses, $p(r_i)$ gives the probability of a specific response across all stimulus conditions, and $p(r_i | s_x)$ gives the response probability conditioned on a specific stimulus \citep{Borst:1999hw}. For $\log_2$, $I$ is measured in bits. Clearly, information as defined here still depends on experimental decisions like response binning and the definition of stimulus conditions.
+where $i$ indexes the set of all enumerated responses, $p(r_i)$ denotes the marginal probability of a specific response across all stimulus conditions, and $p(r_i | s_x)$ denotes the response probability conditioned on a specific stimulus \citep{Borst:1999hw}. $I$ is positive and, for $\log_2$, measured in bits. This quantity is equivalent to the mutual information between response and a specific stimulus \citep{Cover:2006aa}. Intuitively, it rigorously measures how much an ideal observer could learn about the stimulus from the neuron's response.
 
-From specifically designed experiments, one can derive theoretical bounds on the transmission capacity of neural channels and estimate normative qualities like the efficiency of a neural code by weighing transmitted information against maximally possible response entropy. It also extends to the encoding of dynamic stimuli. Such probabilistic methods work even in the absence of a specific response model and without making strong assumptions about the function of a sensory system or the constraints under which it operates.
+Average information is computed as the probability-weighted sum of specific per-stimulus information
+\begin{equation}
+    I(R, S) = \sum_{j} p(s_j) I(R, s_j)
+\end{equation}
+which is equal to the mean in stimulus-balanced designs. Note that information as defined here critically depends on experimental decisions like response binning and the choice of stimulus conditions. Values hinge on the choice of alphabet used to represent the experiment.
+
+For some designs, one can derive theoretical bounds on the transmission capacity of neural channels and estimate normative qualities like the efficiency of a neural code by weighing transmitted information against maximally possible response entropy. It naturally extends to the encoding of dynamic stimuli. Such probabilistic methods work even in the absence of a specific response model and without making strong assumptions about the function of a sensory system or the constraints under which it operates.
 
 The technique has been used to quantify coding efficiency and determine transmission bounds for several model systems including motion-sensitive neurons in flies \citep{Bialek:1991aa,vanSteveninck:1997aa,Haag:1998wr}, electroreceptors in fish \citep{Wessel:1996aa}, and retinal ganglion cells in the salamander \citep{Warland:1997aa}. Critically, measured information rates depend on the choice of stimulus ensemble. In frog auditory neurons, for instance, \citet{Rieke:1995aa} found efficiency values close to 90\% when they tested naturalistic input.
 
@@ -67,22 +78,22 @@ Efficient coding assumes that the goal of a sensory system is to represent as mu
 
 The main target of early vision then becomes reduction of redundancy. Ideally, signals carried by peripheral sensory neurons should be statistically independent in order to minimize wasteful duplication of information. Natural images exhibit regular statistics such as characteristically shaped power spectra that give rise to specific correlation structures. By removing such correlations and emphasizing deviations from expected natural statistics, an operation commonly termed whitening, early vision minimizes energy expenditure while conserving features of the stimulus that are presumed to be behaviorally relevant.
 
-The fly retina provides classic demonstrations of this principle at work. \citet{Laughlin:1981wn} measured naturally occurring luminance distributions and compared the resulting histograms to corresponding response functions of lamina bipolar cells which form the first processing stage after the light-sensitive photoreceptor. In line with predictions from efficient coding, these response functions effectively equalized the histograms, making all outputs equally likely under the assumption of a natural stimulus distribution. A related study \citep{Srinivasan:1982uq} could show that lateral inhibition in the fly retina reliably removes the long-range correlations typical for natural images, effectively suppressing background, retaining sensitivity to small fluctuations, and implementing a type of predictive coding.
+The fly retina provides classical demonstrations of this principle at work. \citet{Laughlin:1981wn} measured naturally occurring luminance distributions and compared the resulting histograms to corresponding response functions of lamina bipolar cells which form the first processing stage after the light-sensitive photoreceptor. In line with predictions from efficient coding, these response functions effectively equalized the histograms, making all outputs equally likely under the assumption of a natural stimulus distribution. A related study \citep{Srinivasan:1982uq} could show that lateral inhibition in the fly retina reliably removes the long-range correlations typical for natural images, effectively suppressing background, retaining sensitivity to small fluctuations, and implementing a type of predictive coding.
 
 Constraint triples of this type---minimization of resources, maximization of transmitted information, assuming some naturalistic stimulus distribution---have been equally fruitfully applied to early processing in retina and visual cortex of mammals. Center-surround receptive fields in both retina and lateral geniculate nucleus (LGN) of the cat have been suggested to implement spatial filters that are well suited to whitening the typical power spectra of natural images \citep{vanHateren:1992aa,vanHateren:1993aa,Atick:1992aa}. \citet{Dan:1996aa} confirmed this prediction experimentally by recording LGN responses to natural movies, finding them to be largely statistically independent. \citet{Ratliff:2010kb} argue that the asymmetry in ON and OFF contrast prevalence mentioned above explain the difference in numbers between ON and OFF retinal ganglion cells in the vertebrate retina. Interestingly, evidence from primary sensory neurons in V1 of awake mice indicates that adaptation to natural scene statistics partially depends on experience; if raised in stimulus-deprived environments, predictive coding of specifically real images is abolished \citep{Pecka:2014aa}.
 
 A closely related normative doctrine is that of sparse and distributed coding: the idea that sensory systems like visual cortex aim to represent natural stimuli using a minimum of active neurons \citep{Simoncelli:2001dn}. \citet{Ohlshausen:1996aa}, for instance, optimized a linear generative model to reconstruct natural images under the constraint of activation sparseness. The resulting filters bear striking resemblance to localized oriented bandpass receptive fields in area V1, indicating that early visual cortex is adapted to the task of efficiently representing real-world stimulus distributions \citep[for a related method, based on independent component analysis, see][]{vanHateren:1998jt,Bell:1997ve}.
 
-\subsection{Task-driven optimization}
+\subsection{Task-centric approaches}
 Efficient coding theory sidesteps the question of task relevance and presupposes that peripheral sensory systems perform lossless compression while maximizing efficiency. This has been a frequent source of criticism \citep{Simoncelli:2003aa}. After all, brains solve particular problems, so not all information is equal. Relevance may well depend on the particular nature of downstream processing or even behavioral state. For this reason alone, efficient coding is unlikely to scale to higher-level computation.
 
 Instead of choosing a generic normative aim like information preservation, one may be able to do better by picking a specific, task-bound objective function. Encouraging examples come from recent advances in artificial pattern recognition \citep{Bishop:2006aa} and specifically the hierarchical models prevalent in so-called deep learning \citep{Goodfellow:2016aa}. Response properties along the visual cortical pathway go from simple local receptive fields in V1 to object-specific and invariant representations in higher areas \citep{Felleman:1991aa,Yamins:2016hg}. Such neurons are sensitive to, for instance, cars regardless of perspective. Hierarchical neural networks that mimic aspects of this organization \citep{Fukushima:1980ve} have reached human-like performance on large object recognition data sets, made possible by advances in optimization techniques \citep{LeCun:1989aa} and raw processing power \citep{LeCun:2015dt}. \citet{Yamins:2014gi} modeled an artificial deep network after the primate object recognition cascade consisting of areas V1, V2, V4, and IT. After training this system to recognize classes of objects in natural images, they compared learned weights with representations in the biological system and found striking similarities, at least in higher layers \citep{Cadieu:2014in}. More generally, early stages of visually trained deep networks often exhibit receptive fields that resemble those found in the vertebrate retina or V1 \citep{Yamins:2016hg}.
 
-In psychophysics, several studies have successfully predicted texture salience from statistical properties of natural images \citep{Tkacik:2010aa,Hermundstad:2014aa}. By determining maximally informative features in real stimuli, it was possible to predict behavioral performance for a given synthetic texture.
+In psychophysics, studies have successfully predicted texture salience from statistical properties of natural images \citep{Tkacik:2010aa,Hermundstad:2014aa}. By determining maximally informative features in real stimuli, it was possible to predict behavioral performance for a given synthetic texture.
 
-Task-driven approaches have also been applied to the visual system of the fly. \citet{Clark:2014aa} and \citet{Fitzgerald:2015aa} optimized a motion detector to maximize the linear correlation between time-averaged model output and true velocity of rigidly translating natural images. While functionally plausible, this makes strong assumptions about the true goal of motion-sensing elements. Other studies put fly motion detectors in the functional context of closed-loop course stabilization but did not take natural stimulus distribution into account \citep{Warzecha:1996bm,Warzecha:1998tn}.
+Task-driven approaches have also been applied to the visual system of the fly. \citet{Clark:2014aa} and \citet{Fitzgerald:2015aa} optimized a motion detector to maximize the linear correlation between time-averaged model output and true velocity of rigidly translating natural images. While functionally plausible, this makes strong assumptions about the true goal of motion-sensing elements and evolutionary pressures at work. Other studies put fly motion responses in their functional context by optimizing closed-loop course stabilization but did not take natural stimulus distribution into account \citep{Warzecha:1996bm,Warzecha:1998tn}.
 
-Combining behaviorally relevant targets with biologically plausible models appears to be a promising tool for understanding neural processing beyond the sensory periphery. Of course, for complex and highly multiplexed information processing systems like the brain, ascribing goals remains challenging: one may well be wrong about what any given circuit is in fact trying to achieve. Additionally, the approach critically depends on the choice of model---say, a feedforward network for cortical processing as opposed to a more plausible recurrent system---and the techniques used for post-hoc comparisons between model and neural circuit \citep{Yamins:2016hg}.
+Combining behaviorally relevant targets with biologically plausible models appears to be a promising tool for understanding neural processing beyond the sensory periphery. Of course, for complex and highly multiplexed information processing systems like the brain, ascribing goals remains challenging: one may well be wrong about what any given circuit is in fact trying to achieve. Additionally, the approach critically depends on the choice of model---say, a feedforward network for cortical processing as opposed to a more plausible recurrent design---and the techniques used for post-hoc comparisons between model and neural circuit \citep{Yamins:2016hg}.
 
 % Bialek H1 thing-y
 % van Hateren work
@@ -92,24 +103,82 @@ Combining behaviorally relevant targets with biologically plausible models appea
 
 % \section{ON and OFF pathways in sensory processing}
 
-% \section{Motion vision in the fly}
+\section{Motion vision in the fruit fly}
+% Mention D. melanogaster
 
-% \subsection{Motion-guided behaviors}
-% \subsection{Visual stimuli}
-% \subsection{Algorithmic models}
+\subsection{Visually guided behaviors}
+Flies and specifically \textit{D. melanogaster} exhibit a largely stereotyped, well characterized repertoire of visually driven behaviors \citep{Borst:2014kl}.
+% BETTER CITATION
+This has greatly contributed to their ongoing popularity in the field of motion vision. Reflexive responses facilitate the precise measurement of sensory input-output relationships in large volumes. Systems neuroscience derives predictions about neural processing from quantitative descriptions of behavior which drive physiological work. In turn, behavioral tasks provide powerful high-throughput test beds for hypotheses generated from mapping neural circuits.
 
-% \section{Structure and function of the fly visual system}
-% \subsection{Retina}
-% \subsection{Lamina}
-% \subsection{Medulla and lobula}
-% \subsection{Lobula plate}
-% \subsection{Downstream circuits}
+A vast majority of behaviors is not explored in the ecological context of freely moving animals but under strictly controlled conditions instead. Deviations from naturalness include head-fixation, tethering, artificial visual stimulation, and synthetic stimulus statistics. Experimental abstraction allows for full control of sensory stimuli and exact observation of fly movements. However, it also runs the risk of mapping artificial behavioral motifs that do not generalize to ecological settings \citep{Krakauer:2017aa}. The controlled approach and in particular the reliable optomotor response have nonetheless shed significant light on the inner workings of motion detection circuitry in flies.
 
-% \section{Experimental tools in circuit neuroscience}
+Behavioral assays were a critical component of my work in the studies that comprise the thesis at hand. In the following section, I survey the range of visual reflexes with a clear focus on \textit{Drosophila}, referring to other commonly employed fly genera (like \textit{Musca} or \textit{Calliphora}) where instructive.
+
+% Make a note about new free walking approaches (Branson)
+
+\subsubsection{Optomotor response}
+Flies tend to follow the visual motion of their surround. When for instance tethered to the center of a rotating textured drum, they reflexively attempt to turn in the same direction. This behavioral pattern is termed optomotor response. It was first rigorously studied by \citet{Hassenstein:1956fa} who placed \textit{Chlorophanus viridis} on a spherical Y-maze that was light enough to be held and moved by the beetle, thereby simulating walking while keeping the animal fixed relative to the stimulus. They then counted leftward versus rightward choices as a function of various parameters of a motion stimulus to estimate turning tendency. Their quantitative findings formed the foundation of the algorithmic Hassenstein-Reichardt model for insect optomotor behavior \citep{Reichardt:1961aa}, which is discussed in more detail below.
+
+The optomotor response is not exclusive to one mode of locomotion. It can be demonstrated in tethered flying \textit{Drosophila}, measured via torque meter or as the difference between wing beat frequencies, as well as in flies walking on treadmill systems \citep{Buchner:1976kd,Gotz:1964bj,Fermi:1963aa,Goetz:1973aa}. While commonly elicited by yaw motion revolving around the vertical body axis of the fly, it generalizes to pitch and roll \citep{Blondeau:1982hd}. When the fly's head is left unrestrained, its movements also track stimulus direction \citep{Hengstenberg:1988kg,Haikala:2013cm}.
+
+A plethora of studies has mapped the properties of the optomotor response \citep[see][]{Borst:2010fk}. Critically, the behavior does not appear to be driven by true rotational velocity; many other stimulus features influence response amplitudes. The most salient findings are summarized in the following:
+
+\begin{enumerate}
+    \item Flies turn in the same direction as the pattern.
+    \item Responses initially grow with pattern velocity but show a clear optimum, after which turning decreases again.
+    \item Stimulus geometry has a strong effect on the velocity tuning. For sine gratings, increasing the pattern wavelength $\lambda$ shifts the optimum towards larger velocities $v$. Critically, the fly optomotor response is tuned not to stimulus velocity but to contrast frequency instead, which is given by $f = \frac{v}{\lambda}$.
+    \item The magnitude of the response increases with stimulus contrast.
+\end{enumerate}
+
+% FUNCTION AND OTHER SPECIES
+
+Functionally, the reflex is usually interpreted as a compensatory mechanism. Flies perform acrobatic maneuvers whose instantaneous rotational velocity may well exceed \SI{2000}{\degree\per\second} during unrestrained flight, all at forward speeds of up to \SI{0.7}{\metre\per\second} in larger species \citep{Land:1974dp,Mronz:2008eb}. At the same time, the weight of an individual fruit fly is on the order of \SI{0.2}{\milli\gram} \citep{Seiger:1966a}. This makes them vulnerable to external perturbations like sudden gusts of wind. Internal sources of noise, like miniscule asymmetries in wing structure, may exacerbate the problem.
+
+In concert with proprioceptive mechanisms, the optomotor response confers some protection against unintended path deviations. Any turning response that is syndirectional with global optic flow will eventually return the fly to straight heading. The optomotor response thus implements a simple visual feedback system that keeps the fly on course \citep{Borst:2014kl}. Comparable locomotor reflexes are found in other insects and fish \citep{Orger:2000cy}, and the optomotor response closely resembles the widespread optokinetic reflex that stabilizes the eye during movement.
+
+% FIND BETTER CITATION FOR ORGER
+
+Traditionally, optomotor responses have been studied in tethered animals. If the functional logic outlined above holds, then it should also be possible to observe a visually induced following reflex in unrestrained behavior. Counter-intuitively, \citet{Goetz:1970aa} found that groups of fruit flies placed in a rotating drum moved against the direction of the wall pattern. This was later successfully explained as a consequence of complex superpositions of external stimulus and self-induced translating optic flow \citep{Goetz:1975aa}. \citet{Strauss:1997ut} used on-line tracking and live generation of appropriate stimuli to suppress self-generated feedback and confirmed tethered turning behavior in free walking. While tracking flying flies in a large arena, \citet{Mronz:2008eb} could elicit prolonged curved trajectories and largely suppress the body saccades typical for \textit{Drosophila} flight by rotating the cylinder's texture.
+
+% Other species cognates
+
+\subsubsection{Landing and escape response}
+Flies are notoriously capable at evading fast-moving objects and rarely collide with static landmarks. Motion sensors signal imminent collisions through particular patterns of translational optic flow. Approaching a textured surface results in visual expansion whose magnitude correlates with distance and thus, critically, time to impact \citep{Koenderink:1986um}. By selectively extracting looming flow fields, flies can trigger the appropriate response. When at rest, they initiate a fast and largely stereotyped escape. When flying, they either evade or perform the adjustments required for safe landing \citep{Borst:2014kl}.
+
+Several studies have investigated the latter condition in tethered experimental settings. For laterally expanding square-wave gratings, \textit{Drosophila} robustly steer away from the focus of expansion \citep{Tammero:2002aa}. Centered expansion, on the other hand, activates a landing sequence. \citet{Duistermars:2007aa} systematically compared the tuning properties of expansion-triggered evasion and rotation-triggered optomotor response. The two pathways differed in pooling and contrast sensitivity, yet, aspects like temporal and spatial sensitivity were strikingly similar. This indicates that both behaviors draw from the same set of motion-sensitive units which are then processed differentially.
+
+Centrally positioned expansion of sine or square-wave gratings prompts the landing response, which consists of a fixed sequence of postural and steering-related adjustments \citep{Braitenberg:1966aa,Goodman:1960aa,Borst:1986wx}. Critically, the delay leading up to initiation of this program depends on spatial and temporal aspects of the expanding stimulus. By manipulating these parameters, \citet{Bahde:1986eh} demonstrated that a single set of motion detecting units could feasibly underlie both optomotor and landing response in the housefly \textit{M. domestica}. Their model simply integrates motion signals up to a certain threshold after which the landing sequence is started. This system was capable of reliably predicting response latencies.
+
+When at rest, flies respond to fast expansion by rapidly initiating a controlled jump. This happens within $\approx\SI{200}{\milli\second}$ of stimulus onset and is not completely stereotyped. In a majority of cases, flies manage to coordinate their take-off such that they escape away from the looming stimulus, which hints at a surprisingly elaborate transformation from visual input to motor output \citep{Card:2008aa}. Recent high-resolution tracking of escape responses revealed a subtly bimodal distribution of time courses, indicating two distinct, stimulus-dependent escape programs and thus even more complex behavioral phenomenology \citep{Reyn:2014aa}. Intriguingly, \citet{Muijres:2014aa} tracked the flight kinematics of looming-triggered escape responses in freely flying \textit{D. melanogaster} and observed extremely rapid banked turns consisting of carefully calibrated turns and counter-turns. This presumably survival-critical sequence is completed within a small number of wing beats, and testament to the impressive maneuverability of fruit flies.
+
+\subsubsection{Beyond optic flow}
+% % Fixation, Burridan's paradigm
+% % Target tracking
+% % Color conditioning (but MOTION NOOOO)
+
+% \subsection{Neural correlates}
+% \subsubsection{Retina}
+% \subsubsection{Lamina}
+% \subsubsection{Medulla}
+% \subsubsection{Lobula complex}
+% \subsubsection{Downstream processing}
+
+% \section{Algorithmic models of motion detection}
+% % Mention three requirements!
+% \subsection{Gradient-based detectors}
+% \subsection{Correlation-based detectors}
+% \subsection{Visual illusions as circuit-breaking tools}
+
+% \section{Tools for Drosophila circuit neuroscience}
 % \subsection{Neurogenetics}
 % \subsection{Behavioral assays}
+% % Free flight
 % \subsection{Electrophysiology}
 % \subsection{Imaging techniques}
 % \subsection{Connectivity analysis}
 
 % \section{Concluding remarks}
+
+% TALK ABOUT OTHER MODALITIES
+% Intro: Drosophila puzzles together a picture of its surround, task of systems neuroscience, cybernetics
