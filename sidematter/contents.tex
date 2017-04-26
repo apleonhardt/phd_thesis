@@ -1,8 +1,10 @@
 %*******************************************************
 % Contents
 %*******************************************************
-% \phantomsection
-% \pdfbookmark{\contentsname}{tableofcontents}
-% \setcounter{tocdepth}{3}
+
 \tableofcontents
-% \markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}} 
+
+\begingroup
+\let\clearpage\relax
+\listoffigures
+\endgroup
