@@ -3,28 +3,9 @@
 \label{chp:introduction}
 %************************************************
 
-% Here, cite Dickinson (2014)
-% Talk about D.\ melanogaster in general
+To effectively survive in adverse and dynamic environments, behaving agents---be they animals or robots---need to transform sensory signals into adaptive motor output. It is a core goal of systems neuroscience to figure out how biological systems accomplish the task using the computational substrate of neurons. Motion represents a particularly appealing test case for such inquiries. From optic flow, we can derive information about our own movement, the movement of other agents, and many other ecologically relevant aspects of the state of the world.
 
-% Explain optic flow somewhere
-
-% Cite Exner p. 201
-% Cite Schnell (2017)
-% Cite von Uxkull
-% Cite Dror
-% Cite Francescini for tools
-% Cite van Hateren, 2005
-% Cite Trenholm, 2011 in retina
-% Cite that Plos Biol paper about photoreceptors...
-% Cite new Dickinson stuff
-% Cite Frye & Dickinson
-
-% Cybernetic tradition
-% Levels of description: BLACK BOX, CIRCUITS, TELEOLOGY
-% So fly is great -- it's got interesting behavior, small brain, and has been around for ages!!! That's how we do
-% Optic flow
-
-% Mention Benzer's comment about fruit fly between neuron and human brain on log scale
+Investigations of neural circuits occur at various levels of description. In the tradition of cybernetics, we can study organisms as black boxes that take inputs and produce outputs according to particular rules. At the neural level, we can attempt to unravel the networks that implement these rules. At a teleological level, we can try to understand \textit{why} these networks are built the way they are. Throughout my thesis, I tackle these questions using motion-guided responses of the fruit fly \textit{Drosophila melanogaster} as a model system. At all aforementioned levels, it exhibits compelling features: a rich set of stereotyped behaviors that support behavioral exploration, small brains that contain orders of magnitude fewer neurons than the mammalian nervous system, and an ecological pervasiveness that implies well-adapted circuitry. Here, I lay some of the groundwork for the articles that represent the main part of this cumulative thesis.
 
 \section{Normative views of sensory neuroscience}
 
@@ -40,7 +21,7 @@ The evolutionary or teleological perspective is inherently normative. From a com
     \centering
     \includegraphics[width=1.025\textwidth]{graphics/figure1_reduced}
     \caption[Natural and artificial images]
-    {Comparison of natural and artificial images. \textbf{a} Patch from a natural image taken in a forest. \textbf{b} Same image after randomization of phase. \textbf{c} Same image after additional flattening of amplitude spectrum.}
+    {Comparison of natural and artificial images. \textbf{a} Patch from a natural image taken from the in-house library used in \citep{Leonhardt:2016ex}. \textbf{b} Same image after randomization of phase. \textbf{c} Same image after additional flattening of amplitude spectrum.}
     \label{fig:image}
 \end{figure}
 
@@ -303,7 +284,7 @@ The process of densely reconstructing neural tissue is rather involved; even in 
     \label{fig:anatomy}
 \end{figure}
 
-In concert, the techniques of circuit neuroscience have painted an incredibly detailed picture of how motion is computed in the visual system of flies. At the level of gross anatomy the fruit fly brain consists of two parts, a thoracic ganglion and a central brain located in the head (Figure \ref{fig:anatomy}a). Estimates put the overall number of neurons on the order of $10^6$ cells \citep{Morante:2004aa}. A significant portion of these units, possibly more than half, is devoted to the processing of visual information. This occurs primarily in the optic lobes located immediately behind the prominent compound eyes (Figure \ref{fig:anatomy}b). The subunits of this ganglion---lamina, medulla, and a lobula complex consisting of lobula plate and lobula---exhibit an interesting combination of stereotypy and cellular diversity, with clearly repetitive columns dominating high-level structure but the number of distinct neural types exceeding a hundred \citep{Fischbach:1989uw}.
+In concert, the techniques of circuit neuroscience have painted an incredibly detailed picture of how motion is computed in the visual system of flies. At the level of gross anatomy the fruit fly brain consists of two parts, a thoracic ganglion and a central brain located in the head (Figure \ref{fig:anatomy}a). Estimates put the overall number of neurons on the order of $10^6$ cells\footnote{\citet{Benzer:1967aa} remarks that scaled logarithmically, this puts the fly nervous system half of the way between a single neuron and the human brain} \citep{Morante:2004aa}. A significant portion of these units, possibly more than half, is devoted to the processing of visual information. This occurs primarily in the optic lobes located immediately behind the prominent compound eyes (Figure \ref{fig:anatomy}b). The subunits of this ganglion---lamina, medulla, and a lobula complex consisting of lobula plate and lobula---exhibit an interesting combination of stereotypy and cellular diversity, with clearly repetitive columns dominating high-level structure but the number of distinct neural types exceeding a hundred \citep{Fischbach:1989uw}.
 
 The following sections introduce the neural structure of the \textit{Drosophila} optic lobe, seen through the lens of function and specifically motion vision. Where suitable, I reference the rich history of inquiry into motion detection in larger flies, given that many mechanisms are thought to be preserved among dipteran species.
 
@@ -503,9 +484,7 @@ The resulting model faithfully reproduces the hallmarks of similarly tuned class
 A related study used genetic silencing of L1 and L2 to study similar reverse-phi responses in walking fruit flies \citep{Clark:2011gw}. To explain their findings, they proposed an alternative model that computes six combinations of positive or negative signal contrast and sums them with differential weights. A subsequent investigation of reverse-phi responses in tangential cells combined their measurements with genetic silencing of L1 and L2. For all stimulus configurations, the two-quadrant detector predicted blocking results more accurately than the six-quadrant alternative \citep{Joesch:2013ew}.
 
 \section{Concluding remarks}
-
-% End points kinda clear, but what happens in the middle?
-% And how does all of that relate to the world?????
+When I started my doctoral work, starting and end points of motion computation in the \textit{Drosophila} brain had been characterized in great detail. Direction-selectivity is computed in two channels, one specializing in ON (starting from L1) and the other one in OFF stimuli (starting from L2). Tangential cells in the lobula plate exhibit finely tuned flow field sensitivity. Two questions were then central to this dissertation. First, what is the neural substrate mediating between lamina and lobula plate and how does it map onto operations in an algorithmic model of motion detection? Second, how do the functional properties of this split architecture relate to motion vision in its naturalistic context? Through behavioral methods, computational modeling, and intense collaboration with physiologists, I set out to attack these questions. The findings were published in four peer-reviewed articles that comprise the main part of this thesis. They are presented in chronological order.
 
 % TALK ABOUT OTHER MODALITIES
 % Intro: Drosophila puzzles together a picture of its surround, task of systems neuroscience, cybernetics
