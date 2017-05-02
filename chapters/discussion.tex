@@ -17,6 +17,14 @@ Key impetus for the projects I pursued during my doctoral studies was the goal o
 \subsection{Input lines}
 Standard models of local direction-selective units are based on two spatially separated inputs that filter visual signals asymmetrically. Work on T4 and T5 inputs, including ours, has hinted at surprising complexity in the presynaptic structure of fly elementary motion detectors. No obvious one-to-one correspondence between algorithm and circuit. So how should we map neural elements in the medulla onto these algorithmic inputs?
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{graphics/figure_pathway}
+    \caption[Updated map of ON and OFF pathways]
+    {Neural architecture of motion pathways based on updated electron microscopy reconstructions. \textbf{a} Schematic of the ON pathway. \textbf{b} Schematic of the OFF pathway. Illustration modified from M. Meier, with permission.}
+    \label{fig:pathway}
+\end{figure}
+
 \subsubsection{ON pathway}
 Based on connectivity and a limited spatial offset between projection fields that correlated with the preferred direction of the targeted cell, \citet{Takemura:2013ea} had proposed a two-arm model in which Mi1 and Tm3 relay visual input to the dendrites of T4 where motion is then computed through a correlation-type mechanism. Electrophysiological recordings from cell bodies of these two cells constrained the model further as the estimated time constant of a filter fit to Mi1 responses was somewhat larger than that of Tm3 \citep{Behnia:2014jh}. Neither Mi1 nor Tm3 were already selective for direction. Together, these findings predicted that input signals are combined on T4 dendrites in a non-linearly opponent fashion as in the model proposed by \citet{Barlow:1965aa}. The correspondence between circuit and a subunit of the Reichardt model would then have been almost one-to-one: starting from photoreceptors, the L1-Mi1 and L1-Tm3 pathways carry a slow and a fast signal, respectively, to the non-linearity implemented by T4.
 
@@ -61,6 +69,14 @@ Several studies have now made progress toward a neural understanding of the oper
 Second, \citet{Leong:2016hu} used systems identification to fit T5 white-noise responses. Given the inherent non-linearity of direction-selective responses, they built a cascade model that consisted of chained linear (L) receptive fields and point non-linearities (N), forming a LNLN feed-forward model that also modeled calcium binding dynamics. This phenomenological model contrasts with mechanistic accounts like the Reichardt detector. As expected and in line with the internal structure of motion energy models, response variance was best explained by a spatiotemporally slanted receptive field combined with polynomial non-linearities of orders 3 and above. Within the linear spatiotemporal filter, two spatially separated sub-fields could be identified---one with positive sign, one with negative sign. The authors interpreted this as a dual mechanism for generating OFF-specific direction-selectivity that recruits both facilitation and suppression, but note that their method does not allow for conclusive disambiguation of, say, ON facilitation and OFF suppression.
 
 Third and finally, \citet{Haag:2016cq} probed the dendritic non-linearity through a combination of precisely targeted apparent motion and layer-specific read-out of T4 activity. The former was accomplished by telescopic stimulation of precisely isolated neuro-cartridges; the second by expressing the calcium indicator under the control of a T4c-exclusive driver line. Single T4 cells have elongated receptive fields that span multiple columns. When apparent motion consisting of ON illumination steps was focused on the center, both non-linear amplification of preferred direction sequences as well as non-linear suppression of null direction sequences could be observed, showing explicitly that both mechanisms underlie direction-selectivity on T4 dendrites. Critically, at the dorsal and ventral end of the receptive field only suppression and facilitation, respectively, occurred. This indicated a clear functional division among input elements at opposite ends of the dendritic tree.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.55\textwidth]{graphics/figure_models2}
+    \caption[Combined Reichardt and Barlow-Levick detectors]
+    {Simplified schematic of signal flow in the three-arm detector for T4 motion responses, as proposed by \citet{Haag:2016aa}. Input stages resemble the previous two-quadrant iteration, with high-pass filtering being followed by half-wave rectification. Input B mediates a fast central signal. Inputs A and C supply facilitating and suppressing delayed signals, respectively. Note that for reasons of simplicity, the DC contribution is omitted in this illustration.}
+    \label{fig:detector2}
+\end{figure}
 
 In concerts, these studies argue in favor of a synthesis of Reichardt and Barlow-Levick models. The biological algorithm employs three visual inputs to implement both an excitatory and an inhibitory non-linearity. \citet{Haag:2016cq} put forward a simple extension of the standard correlation scheme in which the output of a multiplicative Reichardt sub-unit is divided by a third spatially displaced input, effectively creating a serial circuit consisting of two half-detectors. In this model, the central arm is a fast line and the flanking inputs contain appropriate delays. The model mimics T4 responses to apparent motion closely and produces plausible frequency tuning curves.
 
