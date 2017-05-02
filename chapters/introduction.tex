@@ -110,15 +110,7 @@ Task-driven approaches have also been applied to the visual system of the fly. \
 
 Combining behaviorally relevant targets with biologically plausible models appears to be a promising tool for understanding neural processing beyond the sensory periphery. Of course, for complex and highly multiplexed information processing systems like the brain, ascribing goals remains challenging: one may well be wrong about what any given circuit is in fact trying to achieve. Additionally, the approach critically depends on the choice of model---say, a feedforward network for cortical processing as opposed to a more plausible recurrent design---and the techniques used for post-hoc comparisons between model and neural circuit \citep{Yamins:2016hg}.
 
-% Bialek H1 thing-y
-% van Hateren work
-
 \section{Visually guided behaviors in the fly}
-% Mention D.\ melanogaster
-% Explain optic flow
-% \subsection{Visually guided behaviors}
-% Make a note about new free walking approaches (Branson)
-
 Flies and specifically \textit{D.\ melanogaster} exhibit a largely stereotyped, well characterized repertoire of visually driven behaviors \citep{Borst:2014kl}. This has greatly contributed to their ongoing popularity in the field of motion vision. Reflexive responses facilitate the precise measurement of sensory input-output relationships in large volumes. Systems neuroscience derives predictions about neural processing from quantitative descriptions of behavior which drive physiological work. In turn, behavioral tasks provide powerful high-throughput test beds for hypotheses generated from mapping neural circuits.
 
 A vast majority of behaviors is not explored in the ecological context of freely moving animals but under strictly controlled conditions instead. Deviations from naturalness include head-fixation, tethering, artificial visual stimulation, and synthetic stimulus statistics. Experimental abstraction allows for full control of sensory stimuli and exact observation of fly movements. However, it also runs the risk of mapping artificial behavioral motifs that do not generalize to ecological settings \citep{Krakauer:2017aa}. The controlled approach and in particular the reliable optomotor response have nonetheless shed significant light on the inner workings of motion detection circuitry in flies.
@@ -142,8 +134,6 @@ A plethora of studies has mapped stimulus-dependencies of the optomotor response
     \item The magnitude of the response increases with stimulus contrast.
 \end{enumerate}
 
-% FUNCTION AND OTHER SPECIES
-
 Functionally, the reflex is usually interpreted as a compensatory steering mechanism \citep{Gotz:1968aa,Heisenberg:1984aa}. Flies are capable of long-duration flight in adverse surroundings \citep{Goetz:1987aa,Dickinson:2014aa}. They also perform acrobatic maneuvers whose instantaneous rotational velocity may well exceed \SI{2000}{\degree\per\second} during unrestrained flight, all at forward speeds that can reach \SI{0.7}{\metre\per\second} in larger species \citep{Land:1974dp,Mronz:2008eb}. At the same time, the weight of an individual fruit fly is on the order of \SI{0.2}{\milli\gram} \citep{Seiger:1966a}. This makes them preciously vulnerable to external perturbations like sudden gusts of wind. Internal sources of noise, like small asymmetries in wing morphology, add to the problem.
 
 In concert with proprioceptive mechanisms, the optomotor response confers some protection against unintended path deviations. Any turning response that is syndirectional with global optic flow will eventually return the fly to straight heading, assuming that the estimated optic flow provides an accurate read-out of ego-motion. The optomotor response implements a simple, reflexive feedback system that keeps the fly on course\footnote{Note that some studies have suggested that \textit{Drosophila} is capable of modulating the strength and even sign of optomotor orientation behavior through stochastic adjustment and subsequent evaluation of visual feedback \citep{Wolf:1992aa,Wolf:1986ii}.} \citep{Borst:2014kl}. In this vein, some authors have argued that the non-monotonous velocity tuning of the motion sensor keeps the system from going into irrecoverable oscillations \citep{Warzecha:1996bm}. Comparable locomotor reflexes are found in other insects or fish \citep{Arnold:1974aa,Portugues:2009aa}, and the optomotor response closely resembles the widespread optokinetic nystagmus that stabilizes the eye during movement \citep{Buttner:2007aa}.
@@ -160,8 +150,6 @@ Centrally positioned expansion of sine or square-wave gratings prompts the landi
 When at rest, flies respond to fast expansion by rapidly initiating a controlled jump. This happens within $\approx\SI{200}{\milli\second}$ of stimulus onset and is not completely stereotyped. In a majority of cases, flies manage to coordinate their take-off such that they escape away from the looming stimulus, which hints at a surprisingly elaborate transformation from visual input to motor output \citep{Card:2008aa}. Recent high-resolution tracking of escape responses revealed a subtly bimodal distribution of time courses, indicating two distinct, stimulus-dependent escape programs and thus even more complex behavioral phenomenology \citep{Reyn:2014aa}. Intriguingly, \citet{Muijres:2014aa} tracked the flight kinematics of looming-triggered escape responses in freely flying \textit{D.\ melanogaster} and observed extremely rapid banked turns consisting of carefully calibrated turns and counter-turns. This presumably survival-critical sequence is completed within a small number of wing beats, and testament to the impressive maneuverability of fruit flies.
 
 \subsection{Beyond optic flow}
-% Talk about visually mediated mating stuff!
-
 All behaviors discussed so far were derived from global optic flow. Of course, the visual environment of the fruit fly provides cues beyond wide-field motion.
 
 A prominent example among them is fixation. Ego-motion results in the largely coherent flow fields that span the complete visual field and drive the optomotor response. Superimposed onto this motion background are the relative movements of nearby objects. Flies need to track such entities in order to avoid predators, find conspecifics, and navigate between landmarks.
@@ -485,6 +473,3 @@ A related study used genetic silencing of L1 and L2 to study similar reverse-phi
 
 \section{Concluding remarks}
 When I started my doctoral work, starting and end points of motion computation in the \textit{Drosophila} brain had been characterized in great detail. Direction-selectivity is computed in two channels, one specializing in ON (starting from L1) and the other one in OFF stimuli (starting from L2). Tangential cells in the lobula plate exhibit finely tuned flow field sensitivity. Two questions were then central to this dissertation. First, what is the neural substrate mediating between lamina and lobula plate and how does it map onto operations in an algorithmic model of motion detection? Second, how do the functional properties of this split architecture relate to motion vision in its naturalistic context? Through behavioral methods, computational modeling, and intense collaboration with physiologists, I set out to attack these questions. The findings were published in four peer-reviewed articles that comprise the main part of this thesis. They are presented in chronological order.
-
-% TALK ABOUT OTHER MODALITIES
-% Intro: Drosophila puzzles together a picture of its surround, task of systems neuroscience, cybernetics
