@@ -33,6 +33,8 @@
     linkcolor=Maroon,
 }
 
+\hyphenation{Schil-ling}
+
 \begin{document}
 
 %******************************************************************
@@ -48,7 +50,6 @@
 
 \input{sidematter/supervisor}
 \input{sidematter/summary}
-\input{sidematter/acknowledgments}
 
 \pagestyle{scrheadings}
 % \clearscrheadfoot
@@ -80,6 +81,18 @@
 \clearpage
 \input{chapters/bibliography}
 
+\pagestyle{plain}
+
+\cleardoublepage
+\input{sidematter/acknowledgments}
+
+\cleardoublepage
+\input{sidematter/curriculumvitae}
+
+\cleardoublepage
 \input{sidematter/affidavit}
+
+\cleardoublepage
+\input{sidematter/contributions}
 
 \end{document}
